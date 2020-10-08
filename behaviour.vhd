@@ -14,8 +14,6 @@ ENTITY traffic IS
 		);
 END ENTITY;
 
-change huenge
-
 ARCHITECTURE rtl OF traffic IS
 	TYPE state_type IS (Init, R, Y1, G, Y2, BLK, GBLK);
 	SIGNAL state: state_type;
@@ -103,6 +101,7 @@ BEGIN
 	END CASE;
 END PROCESS;
 END rtl;
+
 
 
 
