@@ -16,7 +16,11 @@ END ENTITY;
 ARCHITECTURE rtl_test OF tester_traffic IS
 
 CONSTANT period : TIME := 1 ns;
+<<<<<<< HEAD
 CONSTANT period2 : TIME := 49 ns;
+=======
+CONSTANT period2 : TIME := 19 ns;
+>>>>>>> 2c98460badf8a7b5fd5d485aa296a0f6e9d6e790
 CONSTANT period3 : TIME := 2000000 ns;
 
 BEGIN
@@ -48,3 +52,10 @@ END PROCESS reset_process;
 
 
 END rtl_test;
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 2c98460badf8a7b5fd5d485aa296a0f6e9d6e790
