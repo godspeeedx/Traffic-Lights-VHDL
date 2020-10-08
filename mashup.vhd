@@ -12,7 +12,7 @@ ARCHITECTURE mashup_rtl OF master_traffic IS
 	SIGNAL master_output, master_count : std_logic_vector(2 downto 0);
 	SIGNAL master_blk_counter_state : std_logic_vector(1 downto 0);
 	
-	COMPONENT traffic
+	COMPONENT traffic --truee
 		PORT (
 	clk		: IN	std_logic;
 	cnt		: IN	std_logic;
@@ -64,9 +64,3 @@ BEGIN
 		reset => master_reset
 		);
 END mashup_rtl;
-
-
-
-
-
-

@@ -18,6 +18,7 @@ ARCHITECTURE blinking_rtl OF blinking IS
 	SIGNAL blink: blk_type;
 	signal count_i: std_logic_vector(2 downto 0);
 BEGIN
+
 blinking_process:
 PROCESS(clk,blk_in, reset)
 BEGIN 
@@ -60,6 +61,7 @@ BEGIN
 END PROCESS;
 
 END blinking_rtl;
+
 
 
 

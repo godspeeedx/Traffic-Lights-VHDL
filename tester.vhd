@@ -21,7 +21,7 @@ CONSTANT period3 : TIME := 2000000 ns;
 
 BEGIN
 
-clock_process : PROCESS --тактовая
+clock_process : PROCESS
     BEGIN 
         clk <= '0';
         WAIT FOR period;
@@ -48,6 +48,7 @@ END PROCESS reset_process;
 
 
 END rtl_test;
+
 
 
 
