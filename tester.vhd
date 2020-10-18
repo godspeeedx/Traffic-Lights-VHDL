@@ -16,7 +16,8 @@ END ENTITY;
 ARCHITECTURE rtl_test OF tester_traffic IS
 
 CONSTANT period : TIME := 1 ns;
-CONSTANT period2 : TIME := 19 ns;
+CONSTANT period2 : TIME := 11 ns;
+CONSTANT period4 : TIME := 5 ns;
 CONSTANT period3 : TIME := 2000000 ns;
 
 BEGIN
@@ -32,24 +33,32 @@ END PROCESS clock_process;
 change_process : PROCESS
     BEGIN 
         cnt <= '0';
-        WAIT FOR period2;
+        WAIT FOR 3 ns;
         cnt <= '1';
         WAIT FOR period;
         cnt <= '0';
+        WAIT FOR 17 ns;
+        cnt <= '1';
+        WAIT FOR period;
+        cnt <= '0';
+        WAIT FOR 3 ns;
+        cnt <= '1';
+        WAIT FOR period;
+        cnt <= '0';
+        WAIT FOR 17 ns;
+        cnt <= '1';
+        WAIT FOR period;
+        cnt <= '0';
+        WAIT FOR 12 ns;
 END PROCESS change_process;
 
 reset_process : PROCESS
     BEGIN 
         reset <= '1';
-        WAIT FOR 10 ns;
+        WAIT FOR 2 ns;
         reset <= '0';
         WAIT FOR period3;
 END PROCESS reset_process;
 
 
 END rtl_test;
-
-
-
-
-

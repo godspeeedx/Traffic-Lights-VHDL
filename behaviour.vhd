@@ -54,9 +54,9 @@ BEGIN
 				IF blk_in = "01"
 					THEN state <= GBLK; 
 				END IF;
-				IF blk_in = "10"
-					THEN state <= Y2;
-				END IF;
+				--IF blk_in = "10"
+					--THEN state <= Y2;
+				--END IF;
 			WHEN GBLK => 
 				IF blk_in = "01"
 					THEN state <= BLK;
@@ -101,7 +101,4 @@ BEGIN
 	END CASE;
 END PROCESS;
 END rtl;
-
-
-
 

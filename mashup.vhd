@@ -9,7 +9,7 @@ END master_traffic;
 
 ARCHITECTURE mashup_rtl OF master_traffic IS
 	SIGNAL master_clk, master_cnt, master_reset, master_blk_start  : std_logic;
-	SIGNAL master_output, master_count : std_logic_vector(2 downto 0);
+	SIGNAL master_output : std_logic_vector(2 downto 0);
 	SIGNAL master_blk_counter_state : std_logic_vector(1 downto 0);
 	
 	COMPONENT traffic --truee
@@ -37,8 +37,8 @@ ARCHITECTURE mashup_rtl OF master_traffic IS
 	clk		: IN	std_logic;
 	blk_in		: IN	std_logic;
 	reset		: IN	std_logic;
-	blk_out	: OUT	std_logic_vector(1 downto 0);
-	count		: out std_logic_vector(2 downto 0)
+	blk_out	: OUT	std_logic_vector(1 downto 0)
+	--count		: out std_logic_vector(2 downto 0)
 		     );
 	END COMPONENT;
 BEGIN
@@ -60,7 +60,7 @@ BEGIN
 		clk => master_clk,
 		blk_in => master_blk_start,
 		blk_out => master_blk_counter_state,
-		count => master_count,
+		--count => master_count,
 		reset => master_reset
 		);
 END mashup_rtl;
