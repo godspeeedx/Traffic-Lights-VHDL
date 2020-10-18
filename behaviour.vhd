@@ -97,8 +97,7 @@ BEGIN
 			output <= "000";
 		WHEN GBLK =>
 			blk_out <= '1';
-			output <= "111";
+			output <= "001";
 	END CASE;
 END PROCESS;
 END rtl;
-
