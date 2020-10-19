@@ -8,8 +8,8 @@ ENTITY blinking IS
 	PORT(	clk		: IN	std_logic;
 		reset		: IN	std_logic;	
 		blk_in		: IN	std_logic;
-		blk_out		: OUT	std_logic_vector(1 downto 0)
-		--count		: OUT   std_logic_vector(2 downto 0)
+		blk_out		: OUT	std_logic_vector(1 downto 0);
+		count		: OUT   std_logic_vector(2 downto 0)
 		);
 END ENTITY;
 
@@ -24,30 +24,31 @@ PROCESS(clk,blk_in, reset)
 BEGIN 
 	IF (reset = '1') THEN
 		count_i <= "001";
+		--blink <= turned_off;
 	END IF;
 	IF (rising_edge(clk) AND blk_in='1') THEN
 		CASE blink IS
 			WHEN turned_on =>
-				IF (count_i<"101" AND blk_in='1') 
+				IF (count_i<"101") 
 					THEN count_i <= count_i+'1';
 		     		ELSE 
 		     			count_i <= "000";
 		     			blink <= turned_off;
 		    	 	END IF;
 			WHEN turned_off =>
-				IF (blk_in='1')
-				THEN
+				--IF (blk_in='1')
+				--THEN
 				count_i <= "000";
 				count_i <= count_i+'1';
 				blink <= turned_on;
-				ELSE
-				blink <= turned_off;
-				END IF;
+				--ELSE
+				--blink <= turned_off;
+				--END IF;
 		END CASE;
 	END IF;
 END PROCESS blinking_process;
 
---count <= count_i;
+count <= count_i;
 
 out_process: 
 PROCESS (blink)

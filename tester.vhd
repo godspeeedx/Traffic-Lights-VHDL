@@ -60,5 +60,4 @@ reset_process : PROCESS
         WAIT FOR period3;
 END PROCESS reset_process;
 
-
 END rtl_test;
